@@ -10,25 +10,67 @@ This module defines the professional graph schema used
 for the OSINT Knowledge Graph. Each constant below maps
 directly to labels and relationship types in Neo4j.
 
-NODE LABELS
+  NODE LABELS
 -----------
-  - IPAddress       : IPv4/IPv6 address observed in OSINT data
-  - Domain          : Fully Qualified Domain Name (FQDN)
-  - Email           : Email address of a person or service account
-  - Person          : Real-world individual (threat actor, victim, admin)
-  - Organization    : Company, group, or criminal syndicate
-  - ThreatActor     : Named APT group or individual attacker
-  - C2Server        : Command & Control infrastructure server
-  - Vulnerability   : CVE or 0-day vulnerability
-  - Malware         : Malicious software sample or family
-  - FileHash        : MD5 / SHA1 / SHA256 hash of a file artifact
-  - ASN             : Autonomous System Number (network owner)
-  - Geolocation     : Country / City associated with an IP or actor
-  - URL             : Specific uniform resource locator
-  - Port            : Open network port
-  - Certificate     : TLS/SSL certificate (for pivoting)
-  - DataBreach      : A recorded data breach incident
-  - Credential      : Leaked username/password pair
+  - IPAddress       : IPv4/IPv6 address observed in OSINT data.
+                      Used to track attacker infrastructure like
+                      C2 servers and scanning sources.
+
+  - Domain          : Fully Qualified Domain Name (FQDN).
+                      Tracks malicious domains used for phishing,
+                      malware distribution or C2 communication.
+
+  - Email           : Email address of a person or service account.
+                      Used to link threat actors to registrations,
+                      breaches or phishing campaigns.
+
+  - Person          : Real-world individual such as a threat actor,
+                      victim or domain registrant identified in
+                      OSINT sources.
+
+  - Organization    : Company, criminal group or government body
+                      involved in or targeted by a cyber incident.
+
+  - ThreatActor     : Named APT group or individual attacker such
+                      as Lazarus Group or APT28. Core node for
+                      attribution analysis.
+
+  - C2Server        : Command and Control server used by attackers
+                      to send instructions to compromised machines.
+
+  - Vulnerability   : A known CVE or zero-day weakness in software
+                      that attackers exploit to gain access.
+
+  - Malware         : Malicious software sample or family such as
+                      ransomware, RAT or dropper used in an attack.
+
+  - FileHash        : MD5, SHA1 or SHA256 cryptographic hash of a
+                      malware binary or suspicious file artifact.
+
+  - ASN             : Autonomous System Number identifying the
+                      network owner or internet service provider
+                      hosting attacker infrastructure.
+
+  - Geolocation     : Country or city associated with an IP address
+                      or threat actor based on intelligence data.
+
+  - URL             : Specific web address used in phishing emails,
+                      malware downloads or command and control.
+
+  - Port            : Open network port on a server used for
+                      attacker communication or service exposure.
+
+  - Certificate     : TLS or SSL certificate used for pivoting
+                      across attacker infrastructure by fingerprint.
+
+  - DataBreach      : A recorded data breach incident containing
+                      leaked credentials or sensitive information.
+
+  - Credential      : A leaked username and password pair found in
+                      breach data or dark web sources.
+```
+
+---
 
 RELATIONSHIP TYPES
 ------------------
