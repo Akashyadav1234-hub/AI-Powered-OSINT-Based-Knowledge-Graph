@@ -19,6 +19,16 @@ An advanced investigative tool designed to transform unstructured forensic repor
 *   **Visualization:** PyVis & Plotly for interactive web-based reports
 *   **Validation:** Pydantic for strict schema enforcement of extracted intelligence
 
+### 🖼️ Investigative Visualizations
+
+#### 1. Incident Tree (Hierarchical UD View)
+![Incident Tree Screenshot](screenshots/incident_tree.png)
+*This view identifies the primary Threat Actor and branches down to specific exploits and targets.*
+
+#### 2. Neo4j Knowledge Graph
+![Neo4j Graph Screenshot](screenshots/neo4j_graph.png)
+*Live representation of the intelligence stored within the graph database, allowing for multi-vector analysis.*
+
 ## 📥 Installation & Setup
 
 ### 1. Clone the Repository
